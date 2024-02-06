@@ -47,21 +47,16 @@ export const ThemeSwitch = () => {
     <div className='flex items-center justify-center'>
       <button
         onClick={toggleTheme}
-        className={`bg-lightBgMain dark:bg-darktextMain w-20 h-8 flex items-center rounded-full p-1 transition-colors duration-300 ease-in-out`}
+        className={`bg-lightBgMain dark:bg-darktextMain w-9 h-5 flex items-center rounded-full p-1 transition-colors duration-300 ease-in-out`}
       >
-        <span
-          className={`text-xs text-lightBgSecondary dark:text-darkBgSecondary translate-x-9 dark:translate-x-3 absolute`}
-        >
-          {theme === 'dark' ? 'Dark' : 'Light'}
-        </span>
         <div
-          className={`flex items-center justify-center translate-x-0 dark:translate-x-12 w-6 h-6 bg-lightBgSecondary dark:bg-darkBgSecondary rounded-full shadow-md transform transition-transform duration-300 ease-in-out`}
+          className={`flex items-center justify-center translate-x-0 dark:translate-x-3 w-4 h-4 bg-lightBgSecondary dark:bg-darkBgSecondary rounded-full shadow-md transform transition-transform duration-300 ease-in-out`}
         >
-          {theme === 'dark' ? (
-            <i class='fa-regular fa-moon' style={{ color: '#D3D3D3' }}></i>
-          ) : (
-            <i class='fa-regular fa-sun' style={{ color: '#F6F1F1' }}></i>
-          )}
+          <i
+            className={`fa-regular fa-${
+              theme === 'dark' ? 'moon' : 'lightbulb'
+            } text-lightBgMain dark:text-darktextMain fa-2xs`}
+          ></i>
         </div>
       </button>
     </div>
