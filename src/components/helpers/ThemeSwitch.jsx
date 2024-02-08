@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useThemeContext } from '../../contexts/ThemeContext';
 
 export const ThemeSwitch = () => {
   const element = document.documentElement;
   const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-  const [theme, setTheme] = useState(localStorage.getItem('theme'));
+  const { theme, setTheme } = useThemeContext();
 
   const onWindowMatch = () => {
     if (

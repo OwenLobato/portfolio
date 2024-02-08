@@ -1,10 +1,12 @@
 import { useLanguageContext } from '../../contexts/LanguageContext';
+import { useThemeContext } from '../../contexts/ThemeContext';
 import { SocialMediaCircle } from './SocialMediaCircle';
 
 export const ComingSoon = () => {
   const {
     t: { comingSoon },
   } = useLanguageContext();
+  const { theme } = useThemeContext();
 
   const socialMedias = [
     {
@@ -48,7 +50,7 @@ export const ComingSoon = () => {
       </div>
       <img
         className='w-full absolute bottom-0'
-        src={`/svgs/Waves/${window.localStorage.getItem('theme')}Waves.svg`}
+        src={`/svgs/Waves/${theme}Waves.svg`}
         alt='Waves'
       />
     </div>
