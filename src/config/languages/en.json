@@ -3,5 +3,11 @@
     "title": "Coming soon",
     "terminalText": "Owen Lobato's portfolio!",
     "message": "We are working on something amazing. Check back soon for more details!"
+  },
+  "emailModal": {
+    "to": "To",
+    "alertCopied": "Mail copied to clipboard",
+    "content": "Enter your email content here...",
+    "buttonText": "Send Email"
   }
 }

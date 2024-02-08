@@ -1,0 +1,10 @@
+.social-circle {
+  @apply flex items-center justify-center w-16 h-16 rounded-full cursor-pointer border-2
+  bg-lightBgMain border-lightBgSecondary text-lightBgSecondary
+  dark:bg-darkBgMain dark:border-darkBgSecondary dark:text-darkBgSecondary;
+}
+
+.social-circle:hover {
+  @apply bg-lightBgSecondary text-lightBgMain
+  dark:bg-darkBgSecondary dark:text-darkBgMain;
+}

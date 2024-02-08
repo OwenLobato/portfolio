@@ -3,5 +3,11 @@
     "title": "Muy pronto",
     "terminalText": "¡Portafolio de Owen Lobato!",
     "message": "Estamos trabajando en algo increíble. ¡Vuelve pronto para más detalles!"
+  },
+  "emailModal": {
+    "to": "Para",
+    "alertCopied": "Correo copiado al portapapeles",
+    "content": "Ingresa el contenido del correo aqui...",
+    "buttonText": "Enviar correo"
   }
 }
