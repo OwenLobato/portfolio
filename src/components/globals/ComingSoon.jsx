@@ -30,23 +30,27 @@ export const ComingSoon = () => {
   ];
 
   return (
-    <div>
-      <h1 className='text-lightTextMain dark:text-darktextMain'>
+    <div className=' flex flex-col items-center text-center mt-20 md:mt-40'>
+      <h1 className='text-4xl md:text-6xl font-bold text-lightTextMain dark:text-darktextMain'>
         {comingSoon?.title}
       </h1>
-      <p className='text-lightTextMain dark:text-darktextMain'>
+      {/* TODO: Add "Download CV" button */}
+      <h2 className='text-xl md:text-3xl mt-11 text-lightTextMain dark:text-darktextMain'>
         {comingSoon?.terminalText}
-      </p>
-      <p className='text-lightTextSecondary dark:text-darkTextSecondary'>
+      </h2>
+      <p className=' md:leading-10 text-base md:text-xl font-bold mt-11 w-9/12 md:w-2/5 text-lightTextSecondary dark:text-darkTextSecondary'>
         {comingSoon?.message}
       </p>
-      <div className='bg-green-200 flex justify-center items-center gap-4'>
+      <div className='flex justify-center items-center gap-2 md:gap-4 mt-11'>
         {socialMedias.map((socialMedia, index) => (
           <SocialMediaCircle key={index} socialMedia={socialMedia} />
         ))}
       </div>
-      {/* TODO: Add "Download CV" button */}
-      {/* TODO: Add svg waves */}
+      <img
+        className='w-full absolute bottom-0'
+        src={`/svgs/Waves/${window.localStorage.getItem('theme')}Waves.svg`}
+        alt='Waves'
+      />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { LanguageContext } from './contexts/LanguageContext';
 
 const App = () => {
   return (
-    <div className='h-screen bg-lightBgMain dark:bg-darkBgMain'>
+    <div className='min-h-screen bg-lightBgMain dark:bg-darkBgMain flex flex-col'>
       <LanguageContext>
         <NavBar />
         <ComingSoon />

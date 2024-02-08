@@ -1,5 +1,5 @@
 .social-circle {
-  @apply flex items-center justify-center w-16 h-16 rounded-full cursor-pointer border-2
+  @apply flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full cursor-pointer border-2
   bg-lightBgMain border-lightBgSecondary text-lightBgSecondary
   dark:bg-darkBgMain dark:border-darkBgSecondary dark:text-darkBgSecondary;
 }
