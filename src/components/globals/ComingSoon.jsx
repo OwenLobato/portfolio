@@ -3,6 +3,8 @@ import { useThemeContext } from '../../contexts/ThemeContext';
 import { AnimatedText } from './AnimatedText';
 import { SocialMediaCircle } from './SocialMediaCircle';
 
+const cvPath = process.env.REACT_APP_PUBLIC_URL + 'CV_OwenLobatoVelazquez.pdf';
+
 export const ComingSoon = () => {
   const {
     t: { comingSoon },
@@ -38,14 +40,16 @@ export const ComingSoon = () => {
         {comingSoon?.title}
       </h1>
       {/* TODO: Add "Download CV" button */}
-      <div className='border-2 p-6 mt-11 border-lightTextMain dark:border-darktextMain'>
-        <AnimatedText
-          text={comingSoon?.terminalText}
-          styles={
-            'text-xl md:text-3xl font-bold text-lightTextMain dark:text-darktextMain'
-          }
-        />
-      </div>
+      <a href={cvPath} download={'CV_OwenLobatoVelazquez.pdf'}>
+        <div className='border-2 p-6 mt-11 border-lightTextMain dark:border-darktextMain'>
+          <AnimatedText
+            text={comingSoon?.terminalText}
+            styles={
+              'text-xl md:text-3xl font-bold text-lightTextMain dark:text-darktextMain'
+            }
+          />
+        </div>
+      </a>
       <p className=' md:leading-10 text-base md:text-xl font-bold mt-11 w-9/12 md:w-2/5 text-lightTextSecondary dark:text-darkTextSecondary'>
         {comingSoon?.message}
       </p>
