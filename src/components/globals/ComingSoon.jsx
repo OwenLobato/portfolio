@@ -1,5 +1,6 @@
 import { useLanguageContext } from '../../contexts/LanguageContext';
 import { useThemeContext } from '../../contexts/ThemeContext';
+import { AnimatedText } from './AnimatedText';
 import { SocialMediaCircle } from './SocialMediaCircle';
 
 export const ComingSoon = () => {
@@ -37,9 +38,14 @@ export const ComingSoon = () => {
         {comingSoon?.title}
       </h1>
       {/* TODO: Add "Download CV" button */}
-      <h2 className='text-xl md:text-3xl mt-11 text-lightTextMain dark:text-darktextMain'>
-        {comingSoon?.terminalText}
-      </h2>
+      <div className='border-2 p-6 mt-11 border-lightTextMain dark:border-darktextMain'>
+        <AnimatedText
+          text={comingSoon?.terminalText}
+          styles={
+            'text-xl md:text-3xl font-bold text-lightTextMain dark:text-darktextMain'
+          }
+        />
+      </div>
       <p className=' md:leading-10 text-base md:text-xl font-bold mt-11 w-9/12 md:w-2/5 text-lightTextSecondary dark:text-darkTextSecondary'>
         {comingSoon?.message}
       </p>
