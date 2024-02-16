@@ -48,7 +48,7 @@ export const SocialMediaCircle = ({ socialMedia }) => {
       </a>
 
       {isModalOpen && (
-        <div className='fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black dark:bg-gray-500 dark:bg-opacity-50 bg-opacity-75'>
+        <div className='fixed z-10 top-0 left-0 w-full h-full flex justify-center items-center bg-black dark:bg-gray-500 dark:bg-opacity-50 bg-opacity-75'>
           <div className='bg-lightBgMain dark:bg-darkBgMain p-4 rounded-lg shadow-lg flex flex-col items-center '>
             <div className='flex justify-between mb-2'>
               <div className='flex items-center gap-2'>

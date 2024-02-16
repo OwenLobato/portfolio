@@ -1,4 +1,11 @@
 {
+  "navBarOptions": [
+    { "about": "Sobre mí" },
+    { "skills": "Habilidades" },
+    { "experience": "Experiencia" },
+    { "projects": "Proyectos" },
+    { "contact": "Contacto" }
+  ],
   "comingSoon": {
     "title": "Muy pronto",
     "terminalText": "¡Portafolio de Owen Lobato!",

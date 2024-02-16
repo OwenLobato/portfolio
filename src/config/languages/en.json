@@ -1,4 +1,11 @@
 {
+  "navBarOptions": [
+    { "about": "About me" },
+    { "skills": "Skills" },
+    { "experience": "XP" },
+    { "projects": "Projects" },
+    { "contact": "Contact" }
+  ],
   "comingSoon": {
     "title": "Coming soon",
     "terminalText": "Owen Lobato's portfolio!",
