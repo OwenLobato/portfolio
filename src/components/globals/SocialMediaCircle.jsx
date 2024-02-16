@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useLanguageContext } from '../../contexts/LanguageContext';
 import '../../styles/SocialMediaCircle.css';
 
@@ -37,15 +38,20 @@ export const SocialMediaCircle = ({ socialMedia }) => {
 
   return (
     <>
-      <a
+      <motion.a
         href={name === 'Mail' ? null : data}
         target='_blank'
         rel='noopener noreferrer'
+        whileHover={{ translateY: -5 }}
       >
-        <div className={`social-circle`} onClick={handleClick}>
+        <motion.div
+          className={`social-circle`}
+          onClick={handleClick}
+          whileHover={{ scale: 1.1 }}
+        >
           <span className='text-2xl'>{icon}</span>
-        </div>
-      </a>
+        </motion.div>
+      </motion.a>
 
       {isModalOpen && (
         <div className='fixed z-10 top-0 left-0 w-full h-full flex justify-center items-center bg-black dark:bg-gray-500 dark:bg-opacity-50 bg-opacity-75'>
