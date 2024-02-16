@@ -39,19 +39,31 @@ export const ComingSoon = () => {
       <h1 className='text-4xl md:text-6xl font-bold text-lightTextMain dark:text-darktextMain'>
         {comingSoon?.title}
       </h1>
-      <a href={cvPath} download={'CV_OwenLobatoVelazquez.pdf'}>
-        <div className='text-xl md:text-3xl font-bold text-lightTextMain dark:text-darktextMain border-2 p-6 mt-11 border-lightTextMain dark:border-darktextMain hover:bg-lightTextMain hover:text-lightBgMain dark:hover:bg-darktextMain dark:hover:text-darkBgMain'>
+
+      <div className='relative flex flex-col items-center justify-center mt-16'>
+        <div className='text-xl md:text-3xl rounded-md font-bold border-2 p-6 border-lightTextMain dark:border-darktextMain text-lightTextMain dark:text-darktextMain'>
           <AnimatedText text={comingSoon?.terminalText} />
         </div>
-      </a>
-      <p className=' md:leading-10 text-base md:text-xl font-bold mt-11 w-9/12 md:w-2/5 text-lightTextSecondary dark:text-darkTextSecondary'>
+        <a
+          href={cvPath}
+          download={'CV_OwenLobatoVelazquez.pdf'}
+          className='absolute bottom-6 flex justify-center items-center w-12 h-12 rounded-full border-2 border-lightTextMain dark:border-darktextMain bg-lightBgMain dark:bg-darkBgMain text-lightTextMain dark:text-darktextMain transition-colors duration-150 hover:bg-lightTextMain dark:hover:bg-darktextMain hover:text-lightBgMain dark:hover:text-darkBgMain'
+          data-tooltip={comingSoon?.downloadCV}
+        >
+          <i className='fa-solid fa-download fa-xl' />
+        </a>
+      </div>
+
+      <p className=' md:leading-10 text-base md:text-xl font-bold mt-3 w-9/12 md:w-2/5 text-lightTextSecondary dark:text-darkTextSecondary'>
         {comingSoon?.message}
       </p>
+
       <div className='flex justify-center items-center gap-2 md:gap-4 mt-11'>
         {socialMedias.map((socialMedia, index) => (
           <SocialMediaCircle key={index} socialMedia={socialMedia} />
         ))}
       </div>
+
       <img
         className='w-full absolute bottom-0'
         src={`/svgs/Waves/${theme}Waves.svg`}
