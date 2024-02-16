@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../../styles/AnimatedText.css';
 
-export const AnimatedText = ({ text, styles }) => {
+export const AnimatedText = ({ text }) => {
   const displayedSpeed = 120;
 
   const ShowOnce = ({ phrase }) => {
@@ -80,7 +80,7 @@ export const AnimatedText = ({ text, styles }) => {
 
   return (
     <p
-      className={`terminal ${styles} border-r-2 border-lightTextSecondary dark:border-darkTextSecondary whitespace-nowrap overflow-hidden`}
+      className={`terminal border-r-2 border-lightTextSecondary dark:border-darkTextSecondary whitespace-nowrap overflow-hidden`}
     >
       {isStringOrArray(text)}
     </p>

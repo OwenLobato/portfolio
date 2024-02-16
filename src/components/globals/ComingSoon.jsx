@@ -39,15 +39,9 @@ export const ComingSoon = () => {
       <h1 className='text-4xl md:text-6xl font-bold text-lightTextMain dark:text-darktextMain'>
         {comingSoon?.title}
       </h1>
-      {/* TODO: Add "Download CV" button */}
       <a href={cvPath} download={'CV_OwenLobatoVelazquez.pdf'}>
-        <div className='border-2 p-6 mt-11 border-lightTextMain dark:border-darktextMain'>
-          <AnimatedText
-            text={comingSoon?.terminalText}
-            styles={
-              'text-xl md:text-3xl font-bold text-lightTextMain dark:text-darktextMain'
-            }
-          />
+        <div className='text-xl md:text-3xl font-bold text-lightTextMain dark:text-darktextMain border-2 p-6 mt-11 border-lightTextMain dark:border-darktextMain hover:bg-lightTextMain hover:text-lightBgMain dark:hover:bg-darktextMain dark:hover:text-darkBgMain'>
+          <AnimatedText text={comingSoon?.terminalText} />
         </div>
       </a>
       <p className=' md:leading-10 text-base md:text-xl font-bold mt-11 w-9/12 md:w-2/5 text-lightTextSecondary dark:text-darkTextSecondary'>
