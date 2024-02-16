@@ -35,13 +35,13 @@ export const LanguageDropDown = () => {
     >
       <div className='flex items-center justify-center'>
         <span className={`fi fi-${selectedLanguage.flag} `} />
-        <p className='mx-1 text-lightBgMain dark:text-darkTextSecondary'>
+        <p className='mx-1 text-lightBgMain dark:text-darktextMain dark:md:text-darkTextSecondary'>
           {selectedLanguage.name}
         </p>
         <i
           className={`fa-solid fa-angle-${
             isDropdownOpen ? 'up' : 'down'
-          } fa-2xs text-lightBgMain dark:text-darkTextSecondary`}
+          } fa-2xs text-lightBgMain dark:text-darktextMain dark:md:text-darkTextSecondary`}
         />
       </div>
       {isDropdownOpen && (
