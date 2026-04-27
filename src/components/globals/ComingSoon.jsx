@@ -4,6 +4,7 @@ import { useThemeContext } from '../../contexts/ThemeContext';
 import { AnimatedText } from './AnimatedText';
 import { SocialMediaCircle } from './SocialMediaCircle';
 import { FadeIn } from '../helpers/Effects/FadeIn';
+import { Waves } from './Waves';
 
 const cvPath = process.env.REACT_APP_PUBLIC_URL + 'CV_OwenLobatoVelazquez.pdf';
 
@@ -37,8 +38,8 @@ export const ComingSoon = () => {
   ];
 
   return (
-    <div className=' flex flex-col items-center text-center mt-20 md:mt-40'>
-      <FadeIn direction='top'>
+    <div className='relative overflow-x-hidden flex flex-col items-center text-center pt-20 md:pt-40 min-h-screen'>
+      <FadeIn direction='top' className='z-10'>
         <h1 className='text-4xl md:text-6xl font-bold text-lightTextMain dark:text-darktextMain'>
           {comingSoon?.title}
         </h1>
@@ -46,7 +47,7 @@ export const ComingSoon = () => {
 
       <FadeIn
         direction='top'
-        className='relative flex flex-col items-center justify-center mt-16'
+        className='relative flex flex-col items-center justify-center mt-16 z-10'
       >
         <div className='text-xl md:text-3xl rounded-md font-bold border-2 p-6 border-lightTextMain dark:border-darktextMain text-lightTextMain dark:text-darktextMain'>
           <AnimatedText text={comingSoon?.terminalText} />
@@ -71,24 +72,20 @@ export const ComingSoon = () => {
 
       <FadeIn
         direction='bottom'
-        className=' md:leading-10 text-base md:text-xl font-bold mt-3 w-9/12 md:w-2/5 text-lightTextSecondary dark:text-darkTextSecondary'
+        className='md:leading-10 text-base md:text-xl font-bold mt-3 w-9/12 md:w-2/5 text-lightTextSecondary dark:text-darkTextSecondary z-10'
       >
         <p>{comingSoon?.message}</p>
       </FadeIn>
 
-      <FadeIn direction='bottom'>
-        <div className='flex justify-center items-center gap-2 md:gap-4 mt-11'>
+      <FadeIn direction='bottom' className='z-10'>
+        <div className='flex justify-center items-center gap-2 md:gap-4 mt-11 pb-32'>
           {socialMedias.map((socialMedia, index) => (
             <SocialMediaCircle key={index} socialMedia={socialMedia} />
           ))}
         </div>
       </FadeIn>
 
-      <img
-        className='w-full absolute bottom-0'
-        src={`/svgs/Waves/${theme}Waves.svg`}
-        alt='Waves'
-      />
+      <Waves />
     </div>
   );
 };
