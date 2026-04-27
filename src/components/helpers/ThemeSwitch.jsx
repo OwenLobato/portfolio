@@ -1,27 +1,33 @@
 import { useEffect } from 'react';
 import { useThemeContext } from '../../contexts/ThemeContext';
 
-export const ThemeSwitch = () => {
+const onWindowMatch = () => {
   const element = document.documentElement;
   const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
+  if (
+    localStorage.getItem('theme') === 'dark' ||
+    (!('theme' in localStorage) && darkQuery.matches)
+  ) {
+    element.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    element.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+  }
+};
+
+export const ThemeSwitch = () => {
   const { theme, setTheme } = useThemeContext();
 
-  const onWindowMatch = () => {
-    if (
-      localStorage.getItem('theme') === 'dark' ||
-      (!('theme' in localStorage) && darkQuery.matches)
-    ) {
-      element.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      element.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+  useEffect(() => {
+    if (!theme) {
+      onWindowMatch();
     }
-  };
-  onWindowMatch();
+  }, [theme]);
 
   useEffect(() => {
+    const element = document.documentElement;
     switch (theme) {
       case 'dark':
         element.classList.add('dark');
@@ -38,7 +44,7 @@ export const ThemeSwitch = () => {
         onWindowMatch();
         break;
     }
-  }, [theme]);
+  }, [theme]); 
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
