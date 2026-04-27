@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { useLanguageContext } from '../../contexts/LanguageContext';
-import { useThemeContext } from '../../contexts/ThemeContext';
 import { AnimatedText } from './AnimatedText';
 import { SocialMediaCircle } from './SocialMediaCircle';
 import { FadeIn } from '../helpers/Effects/FadeIn';
@@ -12,7 +11,6 @@ export const ComingSoon = () => {
   const {
     t: { comingSoon },
   } = useLanguageContext();
-  const { theme } = useThemeContext();
 
   const socialMedias = [
     {
